@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS coins (
 
 
 CREATE TABLE IF NOT EXISTS time_intervals (
-    time_key INTEGER PRIMARY KEY, -- YYYYMMDDHHMM
+    time_key BIGINT PRIMARY KEY, -- YYYYMMDDHHMM
     timestamp TIMESTAMP NOT NULL,
     date DATE NOT NULL,
     hour INTEGER NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS time_intervals (
 CREATE TABLE IF NOT EXISTS crypto_prices (
     price_id SERIAL PRIMARY KEY,
     coin_key INTEGER NOT NULL,
-    time_key INTEGER NOT NULL,
+    time_key BIGINT NOT NULL,
     price_usd NUMERIC NOT NULL,
     market_cap NUMERIC,
     volume_24h NUMERIC,
