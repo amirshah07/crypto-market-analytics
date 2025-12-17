@@ -29,5 +29,7 @@ CREATE TABLE IF NOT EXISTS crypto_prices (
     collected_at TIMESTAMP NOT NULL,
 
     FOREIGN KEY (coin_key) REFERENCES coins(coin_key),
-    FOREIGN KEY (time_key) REFERENCES time_intervals(time_key)
+    FOREIGN KEY (time_key) REFERENCES time_intervals(time_key),
+
+    UNIQUE(coin_key, time_key)  -- prevents duplicate price records for same coin at same timestamp
 );
